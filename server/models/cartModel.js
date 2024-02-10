@@ -3,23 +3,13 @@ const sequelize = require('../config/db');
 
 const Cart = sequelize.define('Cart', { 
     cartID: {
-        type: DataTypes.Integer,
+        type: DataTypes.INTEGER,
         autoIncrement: true,
         primaryKey: true
     },
 
     userID: {
-        type: DataTypes.Integer,
-        allowNull: false
-    },
-
-    itemID: {
-        type: DataTypes.Integer,
-        allowNull: false
-    },
-
-    name: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         allowNull: false
     },
 
