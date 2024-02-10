@@ -1,7 +1,7 @@
-const { DataTypes } = require('sequelize');
+const  DataTypes  = require('sequelize');
 const sequelize = require('../config/db');
 
-const CartItem = sequelize.define('CartItem', { 
+const CartItem = Sequelize.define('CartItem', { 
     cartItemID: {
         type: DataTypes.INTEGER,
         autoIncrement: true,

@@ -24,7 +24,7 @@ const User = sequelize.define('User', {
     },
 
     oAuthID : {
-        type: Datatypes.STRING,
+        type: DataTypes.STRING,
         allowNull: false
     }
 }, {

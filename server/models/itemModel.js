@@ -29,6 +29,11 @@ const Item = sequelize.define('Item', {
     allowNull: false,
   },
 
+  active: {
+    type: DataTypes.BOOLEAN,
+    allowNull: false
+  },
+
   imageUrl: {
     type: DataTypes.STRING,
     allowNull: true // Allow null value
