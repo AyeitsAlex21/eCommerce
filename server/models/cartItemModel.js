@@ -1,30 +1,46 @@
 const  DataTypes  = require('sequelize');
 const sequelize = require('../config/db');
 
-const CartItem = Sequelize.define('CartItem', { 
+const CartItem = sequelize.define('CartItem', { 
     cartItemID: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
         primaryKey: true
     },
 
-    itemId: {
+    itemID: {
         type: DataTypes.INTEGER,
         allowNull: false
+    },
+
+    itemSizeID: {
+        type: DataTypes.INTEGER,
+        allowNull:false
     },
 
     cartID: {
         type: DataTypes.INTEGER,
         allowNull: false
+    },
+
+    bought: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false
+    },
+
+    dateAdded: {
+        type: DataTypes.DATE,
+        allowNull: false
+    },
+
+    dateBought: {
+        type:DataTypes.DATE,
+        allowNull: true
     }
    
 }, {
-    tableName: 'cartItems', 
+    tableName: 'CartItems', 
     timestamps: true 
 });
-
-CartItem.belongsTo(Cart, {
-    
-})
 
 module.exports = CartItem;

@@ -8,6 +8,16 @@ const User = sequelize.define('User', {
         primaryKey: true
     },
 
+    enabled: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false
+    },
+
+    passwordHash: {
+        type: DataTypes.STRING,
+        allowNull: true
+    },
+
     email: {
         type: DataTypes.STRING,
         allowNull: false
@@ -15,6 +25,11 @@ const User = sequelize.define('User', {
 
     name: {
         type: DataTypes.STRING,
+        allowNull: false
+    },
+
+    lastLogin: {
+        type: DataTypes.DATE,
         allowNull: false
     },
 
@@ -26,9 +41,40 @@ const User = sequelize.define('User', {
     oAuthID : {
         type: DataTypes.STRING,
         allowNull: false
+    },
+
+    StreetAdress1: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+
+    StreetAddress2: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+
+    city: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+
+    state: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+
+    postalCode: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+
+    country: {
+        type: DataTypes.STRING,
+        allowNull: false
     }
+
 }, {
-    tableName: 'users', 
+    tableName: 'Users', 
     timestamps: true 
 });
 

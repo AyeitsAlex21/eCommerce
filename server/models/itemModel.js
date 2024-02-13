@@ -19,16 +19,6 @@ const Item = sequelize.define('Item', {
     allowNull: true // Allow null value
   },
 
-  price: {
-    type: DataTypes.DECIMAL(10, 2), // Supports values up to 99999999.99
-    allowNull: false
-  },
-
-  quantity: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-  },
-
   active: {
     type: DataTypes.BOOLEAN,
     allowNull: false
@@ -39,7 +29,7 @@ const Item = sequelize.define('Item', {
     allowNull: true // Allow null value
   }
 }, {
-  tableName: 'items', 
+  tableName: 'Items', 
   timestamps: true 
 });
 

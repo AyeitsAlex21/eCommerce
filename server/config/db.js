@@ -1,7 +1,7 @@
 require('dotenv').config();
 const { Sequelize } = require('sequelize');
 
-console.log(process.env)
+// Model imports and associations go here
 
 const sequelize = new Sequelize(
   process.env.DB_NAME,
@@ -15,7 +15,3 @@ const sequelize = new Sequelize(
 );
 
 module.exports = sequelize ;
-
-// Model imports and associations go here
-require("../associations/associations")
-
