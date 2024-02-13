@@ -9,7 +9,7 @@ accountRouter.get("/login", (req, res, next) => {
     // ERROR send 401
 });
 
-accountRouter.post("/createAccount", (req, res, next) {
+accountRouter.post("/createAccount", (req, res, next) => {
     // user password has to be 8 chars
 
     // check if email exists return error
