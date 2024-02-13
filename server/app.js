@@ -11,12 +11,12 @@ app.use(express.static('../public'));
 const homePageRouter = require('./routes/homepage.js');
 app.use("/", homePageRouter);
 
-const {Cart, Item, User, CartItem, ItemSize} = require("./associations/associations.js");
+const {Cart, Item, User, CartItem, ItemSize, Order} = require("./associations/associations.js");
 
 sequelize.sync({force: true}) // Be cautious with 'force: true' in production
   .then(() => {
     app.listen(PORT, () => {
-      console.log("NICE localhost:");
+      console.log(`Server is running on http://localhost:${PORT}`);
     })
   })
   .catch((err) => {

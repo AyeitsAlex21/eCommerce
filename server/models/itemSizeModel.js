@@ -1,7 +1,6 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("../config/db");
 
-
 const ItemSize = sequelize.define('ItemSize', { 
     sizeID: {
         type: DataTypes.INTEGER,
