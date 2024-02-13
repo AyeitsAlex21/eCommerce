@@ -3,6 +3,7 @@ const { Sequelize } = require('sequelize');
 
 // Model imports and associations go here
 
+
 const sequelize = new Sequelize(
   process.env.DB_NAME,
   process.env.DB_USER,

@@ -10,7 +10,7 @@ const ItemSize = sequelize.define('ItemSize', {
     },
 
     itemID: {
-        type:DataTypes.STRING,
+        type:DataTypes.INTEGER,
         allowNull:false
     },
 

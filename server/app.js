@@ -1,6 +1,6 @@
 require('dotenv').config();
 const express = require('express');
-const { sequelize } = require('./config/db.js');
+const sequelize  = require('./config/db.js');
 
 const app = express();
 const PORT = process.env.PORT;
@@ -15,6 +15,9 @@ const {Cart, Item, User, CartItem, ItemSize} = require("./associations/associati
 
 sequelize.sync({force: true}) // Be cautious with 'force: true' in production
   .then(() => {
+    app.listen(PORT, () => {
+      console.log("NICE localhost:");
+    })
   })
   .catch((err) => {
     console.error('Unable to connect to the database:', err);
