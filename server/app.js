@@ -6,7 +6,7 @@ const app = express();
 const PORT = process.env.PORT;
 
 app.use(express.json());
-app.use(express.static('../public'));
+app.use(express.static('../client/public'));
 
 const homePageRouter = require('./routes/homepage.js');
 app.use("/", homePageRouter);
