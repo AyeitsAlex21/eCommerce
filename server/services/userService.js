@@ -28,4 +28,13 @@ async function findUserByEmail(email) {
     }
 }
 
-module.exports = {createUser, findUserByEmail}
+async function findUserById(userID) {
+    try {
+        const user = await User.findOne({ where: { userID } });
+        return user;
+    } catch (error) {
+        throw error;
+    }
+}
+
+module.exports = {createUser, findUserByEmail, findUserById}

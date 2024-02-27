@@ -2,8 +2,9 @@ const express = require('express');
 const passport = require('passport');
 const pool = require('../config/db.js');
 const bcrypt = require("bcrypt");
+const passport = require("../app.js");
 
-const { User } = require("../app.js")
+const { User } = require("./associations/associations.js");
 
 const {createUser, findUserByEmail} = require("../services/userService.js")
 const accountRouter = express.Router();

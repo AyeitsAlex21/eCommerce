@@ -28,6 +28,7 @@ app.use(
 app.use(passport.initialize());  //initialize passport
 app.use(passport.session()); // to enable have to say app.use
 
+const { findByEmail, findUserById } = require('./services/userService.js');
 
 passport.use(new LocalStrategy(
   {
@@ -35,7 +36,7 @@ passport.use(new LocalStrategy(
   },
   async (email, password, done) => {
       try {
-          const user = await db.users.findByEmail(email); // Adjust based on how you fetch users
+          const user = await findByEmail(email); // Adjust based on how you fetch users
           if (!user) {
               return done(null, false, { message: 'No user with that email' });
           }
@@ -53,6 +54,20 @@ passport.use(new LocalStrategy(
   }
 ));
 
+passport.serializeUser((user, done) => {
+  done(null, user.id); // Assuming your user object has an 'id' field
+});
+
+passport.deserializeUser(async (id, done) => {
+  try {
+    const user = await findUserById(id); // Use your existing method to find a user by ID
+    done(null, user);
+  } catch (error) {
+    done(error, null);
+  }
+});
+
+module.exports = passport
 
 app.use(express.json());
 app.use(express.static('../public'));
