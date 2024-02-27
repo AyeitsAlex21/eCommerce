@@ -43,8 +43,6 @@ passport.use(new LocalStrategy(
           }
 
           // Compare password with the hashed password
-          console.log("YEAH")
-          console.log(user);
 
           const match = await bcrypt.compare(password, user.passwordHash);
           if (match) {
