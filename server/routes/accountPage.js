@@ -1,6 +1,5 @@
 const express = require('express');
 const pool = require('../config/db.js');
-const bcrypt = require("bcrypt");
 const passport = require("../app.js");
 const bcrypt = require("bcrypt");
 

@@ -3,6 +3,7 @@ const express = require('express');
 const sequelize  = require('./config/db.js');
 const session = require('express-session');
 const passport = require("passport");
+const bcrypt = require("bcrypt");
 const LocalStrategy = require("passport-local").Strategy;
 
 const store = new session.MemoryStore();
@@ -42,7 +43,10 @@ passport.use(new LocalStrategy(
           }
 
           // Compare password with the hashed password
-          const match = await bcrypt.compare(password, user.password);
+          console.log("YEAH")
+          console.log(user);
+
+          const match = await bcrypt.compare(password, user.passwordHash);
           if (match) {
               return done(null, user);
           } else {
