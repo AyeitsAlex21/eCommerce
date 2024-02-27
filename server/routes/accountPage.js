@@ -8,16 +8,18 @@ const { User } = require("../app.js")
 const {createUser, findUserByEmail} = require("../services/userService.js")
 const accountRouter = express.Router();
 
-accountRouter.get("/logout", (req, res) => {
-    req.logout();
-    res.redirect("/");
+accountRouter.get('/logout', (req, res, next) => {
+    req.logout(function(err) {
+        if (err) { return next(err); }
+        res.redirect('/');
+    });
 });
 
 accountRouter.post('/login',
     passport.authenticate('local', { 
-        successRedirect: '/profile', // Adjust as necessary
+        successRedirect: '/login',
         failureRedirect: '/login',
-        failureFlash: true // Optional: Requires flash middleware
+        failureFlash: true
     })
 );
 
@@ -32,7 +34,7 @@ accountRouter.post("/register", async (req, res) => {
             return res.redirect("login");
         }
 
-        const salt = await bcrypt.genSalt(10);
+        const salt = await bcrypt.genSalt(3);
 
         const hashedPassword = await bcrypt.hash(password, salt);
 

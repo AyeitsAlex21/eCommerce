@@ -28,7 +28,7 @@ app.use(
 app.use(passport.initialize());  //initialize passport
 app.use(passport.session()); // to enable have to say app.use
 
-/*
+
 passport.use(new LocalStrategy(
   {
       usernameField: 'email',
@@ -52,7 +52,7 @@ passport.use(new LocalStrategy(
       }
   }
 ));
-*/
+
 
 app.use(express.json());
 app.use(express.static('../public'));
