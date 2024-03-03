@@ -78,7 +78,7 @@ const homePageRouter = require('./routes/homepage.js');
 app.use("/", homePageRouter);
 
 const accountRouter = require('./routes/accountPage.js');
-app.use("/", accountRouter);
+app.use("/account", accountRouter);
 
 const {Cart, Item, User, CartItem, ItemSize, Order} = require("./associations/associations.js");
 

@@ -1,0 +1,30 @@
+body, html {
+    padding: 0;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+#item-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.item {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    width: 200px;
+}
+
+.item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.item h3, .item p {
+    margin: 5px 0;
+}
