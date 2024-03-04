@@ -25,6 +25,8 @@ document.addEventListener('DOMContentLoaded', async function() {
                 const itemDiv = document.createElement('div');
                 itemDiv.classList.add('item');
 
+                itemDiv.setAttribute('data-item-id', item.itemID); // so I can use this to buy item
+
                 itemDiv.innerHTML = `
                     <img src="${item.imagePath}" alt="${item.name}">
                     <h3>${item.name}</h3>
