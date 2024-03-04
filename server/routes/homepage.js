@@ -2,9 +2,10 @@ const express = require("express");
 const { getItems } = require("../services/itemService.js");
 const homePageRouter = express.Router()
 
-homePageRouter.get("/", (req, res, next) => {
+homePageRouter.get("/", async (req, res, next) => {
     const sellables = await getItems();
-    console.log(sellables)
+
+    console.log(sellables);
     res.json(sellables);
 });
 

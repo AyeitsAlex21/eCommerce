@@ -113,6 +113,7 @@ const testItems = [
   }
 ]
 
+/*
 Item.bulkCreate(testItems, { validate: true })
   .then(createdItems => {
     console.log(`${createdItems.length} items have been created.`);
@@ -122,7 +123,7 @@ Item.bulkCreate(testItems, { validate: true })
   .catch(err => {
     console.error('Error during bulk creation:', err);
   });
-
+*/
 
 // END
 
