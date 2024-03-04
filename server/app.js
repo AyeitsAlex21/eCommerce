@@ -73,20 +73,55 @@ module.exports = passport
 
 app.use(express.json());
 app.use(express.static('../public'));
+app.use('/itemImages', express.static('itemImages'));
+
 
 const homePageRouter = require('./routes/homepage.js');
-app.use("/", homePageRouter);
+app.use("/items", homePageRouter);
 
 const accountRouter = require('./routes/accountPage.js');
 app.use("/account", accountRouter);
-
-const {Cart, Item, User, CartItem, ItemSize, Order} = require("./associations/associations.js");
 
 app.get("/", (req, res, next) => {
   res.render("index.html")
 });
 
-sequelize.sync({force: true}) // Be cautious with 'force: true' in production
+const {Cart, Item, User, CartItem, ItemSize, Order} = require("./associations/associations.js");
+
+
+// TESTING TO GET MVP
+// REMOVE WHEN HAVE AN ADD METHOD
+
+const testItems = [
+  {
+    name: "Royal Blue NIKE Dunks",
+    description: "cool shoes",
+    price: 99,
+    imagePath: "../itemImages/1/1.jiff"
+  },
+  {
+    name: "NIKE Limited edition pants",
+    description: "cool pants",
+    price: 350,
+    imagePath: "../itemImages/2/1.png"
+  },
+  {
+    name: "Special Shirt",
+    description: "cool shirt",
+    price: 30,
+    imagePath: "../itemImages/3/1.jiff"
+  }
+]
+
+for(const sellable of testItems) {
+  Item.create(sellable)
+}
+
+// END
+
+sequelize.sync(
+              {force: true}
+              ) // Be cautious with 'force: true' in production
   .then(() => {
     app.listen(PORT, () => {
       console.log(`Server is running on http://localhost:${PORT}`);

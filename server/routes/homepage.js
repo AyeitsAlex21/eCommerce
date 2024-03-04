@@ -1,10 +1,13 @@
 const express = require("express");
+const { getItems } = require("./services/itemService.js");
 
 const homePageRouter = express.Router()
 
 homePageRouter.get("/", (req, res, next) => {
-    res.json()
-})
+    const sellables = getItems();
+
+    res.json(sellables);
+});
 
 homePageRouter.get("/:pageNumber", (req, res, next) => {
     const pageNum = req.params.pageNumber;

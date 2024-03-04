@@ -19,14 +19,19 @@ const Item = sequelize.define('Item', {
     allowNull: true // Allow null value
   },
 
-  active: {
-    type: DataTypes.BOOLEAN,
+  price: {
+    type: DataTypes.DECIMAL,
     allowNull: false
   },
 
-  imageUrl: {
+  active: {
+    type: DataTypes.BOOLEAN,
+    allowNull: true
+  },
+
+  imagePath: {
     type: DataTypes.STRING,
-    allowNull: true // Allow null value
+    allowNull: false // Allow null value
   }
 }, {
   tableName: 'Items', 

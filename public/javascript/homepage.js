@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', async function() {
     async function fetchItems() {
         try {
-            const response = await fetch('/'); // Fetch items from the root endpoint
+            const response = await fetch('/items'); // Fetch items from the root endpoint
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }

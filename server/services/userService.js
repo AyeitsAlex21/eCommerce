@@ -4,7 +4,7 @@ const User = require('../models/userModel.js');
 async function createUser(params) {
     const { firstName, lastName, email, passwordHash } = params;
     
-    console.log(firstName, lastName, email, passwordHash);
+    //console.log(firstName, lastName, email, passwordHash);
     try {
         const user = await User.create({
             firstName: firstName,

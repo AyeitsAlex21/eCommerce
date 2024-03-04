@@ -17,7 +17,7 @@ accountRouter.get('/logout', (req, res, next) => {
 
 accountRouter.post('/login',
     passport.authenticate('local', { 
-        successRedirect: '/login',
+        successRedirect: '/success',
         failureRedirect: '/login',
         failureFlash: true
     })
