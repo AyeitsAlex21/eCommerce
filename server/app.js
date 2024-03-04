@@ -73,7 +73,7 @@ module.exports = passport
 
 app.use(express.json());
 app.use(express.static('../public'));
-app.use('../itemImages', express.static('itemImages'));
+app.use('/itemImages', express.static('../itemImages'));
 
 
 const homePageRouter = require('./routes/homepage.js');
@@ -97,19 +97,19 @@ const testItems = [
     name: "Royal Blue NIKE Dunks",
     description: "cool shoes",
     price: 99,
-    imagePath: "../itemImages/1/1.jiff"
+    imagePath: "/itemImages/1/1.jfif"
   },
   {
     name: "NIKE Limited edition pants",
     description: "cool pants",
     price: 350,
-    imagePath: "../itemImages/2/1.png"
+    imagePath: "/itemImages/2/1.png"
   },
   {
     name: "Special Shirt",
     description: "cool shirt",
     price: 30,
-    imagePath: "../itemImages/3/1.jiff"
+    imagePath: "/itemImages/3/1.jfif"
   }
 ]
 

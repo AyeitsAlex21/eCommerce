@@ -26,10 +26,10 @@ document.addEventListener('DOMContentLoaded', async function() {
                 itemDiv.classList.add('item');
 
                 itemDiv.innerHTML = `
-                    <img src="${item.image}" alt="${item.name}">
+                    <img src="${item.imagePath}" alt="${item.name}">
                     <h3>${item.name}</h3>
                     <p>${item.description}</p>
-                    <p>${item.price}</p>
+                    <p>$${item.price}</p>
                 `;
 
                 container.appendChild(itemDiv);
