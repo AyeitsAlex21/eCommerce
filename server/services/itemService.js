@@ -2,6 +2,7 @@
 const { Item } = require("../associations/associations.js");
 const { Op } = require("sequelize");
 
+
 async function getItems( pageNumber = 0) {
     const startItem = (pageNumber * 10) + 1;
 
@@ -17,12 +18,12 @@ async function getItems( pageNumber = 0) {
             }
             */
         );
-
+        //console.log(fetchedItems);
         return fetchedItems;
     }
     catch (error) {
         throw error;
     }
-}
+};
 
 module.exports = { getItems };

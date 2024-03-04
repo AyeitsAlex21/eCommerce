@@ -113,9 +113,16 @@ const testItems = [
   }
 ]
 
-for(const sellable of testItems) {
-  Item.create(sellable)
-}
+Item.bulkCreate(testItems, { validate: true })
+  .then(createdItems => {
+    console.log(`${createdItems.length} items have been created.`);
+    // Optionally, log each item name
+    createdItems.forEach(item => console.log(item.name));
+  })
+  .catch(err => {
+    console.error('Error during bulk creation:', err);
+  });
+
 
 // END
 

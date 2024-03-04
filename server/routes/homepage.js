@@ -3,7 +3,7 @@ const { getItems } = require("../services/itemService.js");
 const homePageRouter = express.Router()
 
 homePageRouter.get("/", (req, res, next) => {
-    const sellables = getItems();
+    const sellables = await getItems();
     console.log(sellables)
     res.json(sellables);
 });

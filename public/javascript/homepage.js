@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', async function() {
 
     
     fetchItems().then(items => {
+        console.log(items)
 
         if (items && items.length) {
             const container = document.getElementById('item-container');
