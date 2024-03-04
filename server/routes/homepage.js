@@ -1,11 +1,10 @@
 const express = require("express");
-const { getItems } = require("./services/itemService.js");
-
+const { getItems } = require("../services/itemService.js");
 const homePageRouter = express.Router()
 
 homePageRouter.get("/", (req, res, next) => {
     const sellables = getItems();
-
+    console.log(sellables)
     res.json(sellables);
 });
 

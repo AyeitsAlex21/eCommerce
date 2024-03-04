@@ -1,5 +1,5 @@
 
-const { Item } = require("./associations/associations.js");
+const { Item } = require("../associations/associations.js");
 const { Op } = require("sequelize");
 
 async function getItems( pageNumber = 0) {
@@ -7,6 +7,7 @@ async function getItems( pageNumber = 0) {
 
     try {
         const fetchedItems = await Item.findAll(
+            /*
             {
                 where: { 
                     itemID: {
@@ -14,6 +15,7 @@ async function getItems( pageNumber = 0) {
                     } 
                 }
             }
+            */
         );
 
         return fetchedItems;

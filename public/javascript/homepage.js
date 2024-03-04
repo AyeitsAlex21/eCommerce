@@ -13,10 +13,14 @@ document.addEventListener('DOMContentLoaded', async function() {
 
     
     fetchItems().then(items => {
+
         if (items && items.length) {
             const container = document.getElementById('item-container');
 
             items.forEach(item => {
+
+                console.log(item)
+
                 const itemDiv = document.createElement('div');
                 itemDiv.classList.add('item');
 

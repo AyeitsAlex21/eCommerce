@@ -73,7 +73,7 @@ module.exports = passport
 
 app.use(express.json());
 app.use(express.static('../public'));
-app.use('/itemImages', express.static('itemImages'));
+app.use('../itemImages', express.static('itemImages'));
 
 
 const homePageRouter = require('./routes/homepage.js');
@@ -120,7 +120,7 @@ for(const sellable of testItems) {
 // END
 
 sequelize.sync(
-              {force: true}
+              //{force: true}
               ) // Be cautious with 'force: true' in production
   .then(() => {
     app.listen(PORT, () => {
