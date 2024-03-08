@@ -1,10 +1,14 @@
 const express = require("express");
-
+const { getItem } = require("../services/itemService.js");
 const buyItemRouter = express.Router()
 
 
-buyItemRouter.get("/getItem", (req, res, next) => {
-  
+buyItemRouter.get("/getItem/:itemID", (req, res, next) => {
+
+  const reqItemID = req.params.itemID;
+  const fetchItem = getItem(reqItemID);
+
+  res.status(200).json(fetchItem);
 });
 
 buyItemRouter.put("/address", (req, res, next) => {

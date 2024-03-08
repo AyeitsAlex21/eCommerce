@@ -26,9 +26,9 @@ document.addEventListener('DOMContentLoaded', async function() {
                 itemDiv.classList.add('item');
 
                 itemDiv.setAttribute('data-item-id', item.itemID); // so I can use this to buy item
-
+                console.log(`../showItem.html?itemID=${item.itemID}&name=${item.name}`)
                 itemDiv.innerHTML = `
-                    <a href="../showItem.html?itemID=${item.ItemID}?name=${item.name}">
+                    <a href="../showItem.html?itemID=${item.itemID}&name=${item.name}">
                         <img src="${item.imagePath}" alt="${item.name}">
                         <h3>${item.name}</h3>
                         <p>${item.description}</p>
