@@ -12,13 +12,8 @@ document.addEventListener('DOMContentLoaded', async function() {
         try {
             const data = {itemID : itemID};
 
-            const res = await fetch(`/itemInfo/getItem/${data.itemID}`, 
-            {
-                method: "GET",
-                headers: {
-                    'Content-Type': 'application/json', // Important for JSON payloads
-                },
-            });
+            const res = await fetch(`/itemInfo/getItem/${data.itemID}`);
+            
             if (!res.ok) {
                 throw new Error(`HTTP error! status: ${response.status} instead of 200`);
             }

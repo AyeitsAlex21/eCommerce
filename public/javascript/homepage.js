@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', async function() {
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
+
             return await response.json(); // Parse JSON response
         } catch (error) {
             console.error("Could not fetch items:", error);
@@ -19,8 +20,6 @@ document.addEventListener('DOMContentLoaded', async function() {
             const container = document.getElementById('item-container');
 
             items.forEach(item => {
-
-                console.log(item)
 
                 const itemDiv = document.createElement('div');
                 itemDiv.classList.add('item');

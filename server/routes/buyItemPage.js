@@ -3,12 +3,12 @@ const { getItem } = require("../services/itemService.js");
 const buyItemRouter = express.Router()
 
 
-buyItemRouter.get("/getItem/:itemID", (req, res, next) => {
+buyItemRouter.get("/getItem/:itemID", async (req, res, next) => {
 
-  const reqItemID = req.params.itemID;
-  const fetchItem = getItem(reqItemID);
+  const fetchItem = await getItem(req.params.itemID);
+  console.log(fetchItem)
 
-  res.status(200).json(fetchItem);
+  res.json(fetchItem);
 });
 
 buyItemRouter.put("/address", (req, res, next) => {

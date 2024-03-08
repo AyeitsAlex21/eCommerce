@@ -18,7 +18,7 @@ async function getItems( pageNumber = 0) {
             }
             */
         );
-        //console.log(fetchedItems);
+        console.log(fetchedItems);
         return fetchedItems;
     }
     catch (error) {
@@ -35,6 +35,8 @@ async function getItem(itemID) {
                 }
             }
         )
+
+        console.log(fetchItem);
 
         return fetchItem;
     }
