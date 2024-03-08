@@ -26,4 +26,21 @@ async function getItems( pageNumber = 0) {
     }
 };
 
-module.exports = { getItems };
+async function getItem(itemID) {
+    try {
+        const fetchItem = await Item.findOne(
+            {
+                where: {
+                    itemID: itemID
+                }
+            }
+        )
+
+        return fetchItem;
+    }
+    catch (error) {
+        throw error;
+    }
+}
+
+module.exports = { getItems, getItem };

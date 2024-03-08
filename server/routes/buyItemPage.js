@@ -2,6 +2,11 @@ const express = require("express");
 
 const buyItemRouter = express.Router()
 
+
+buyItemRouter.get("/getItem", (req, res, next) => {
+  
+});
+
 buyItemRouter.put("/address", (req, res, next) => {
 
     // find userID 

@@ -82,6 +82,9 @@ app.use("/items", homePageRouter);
 const accountRouter = require('./routes/accountPage.js');
 app.use("/account", accountRouter);
 
+const buyItemRouter =  require('./routes/buyItemPage.js');
+app.use("/itemInfo", buyItemRouter);
+
 app.get("/", (req, res, next) => {
   res.render("index.html")
 });

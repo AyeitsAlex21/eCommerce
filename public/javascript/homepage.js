@@ -28,10 +28,12 @@ document.addEventListener('DOMContentLoaded', async function() {
                 itemDiv.setAttribute('data-item-id', item.itemID); // so I can use this to buy item
 
                 itemDiv.innerHTML = `
-                    <img src="${item.imagePath}" alt="${item.name}">
-                    <h3>${item.name}</h3>
-                    <p>${item.description}</p>
-                    <p>$${item.price}</p>
+                    <a href="../showItem.html?itemID=${item.ItemID}?name=${item.name}">
+                        <img src="${item.imagePath}" alt="${item.name}">
+                        <h3>${item.name}</h3>
+                        <p>${item.description}</p>
+                        <p>$${item.price}</p>
+                    </a>
                 `;
 
                 container.appendChild(itemDiv);
